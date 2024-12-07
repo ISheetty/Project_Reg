@@ -84,4 +84,20 @@ button{
     font-family: Inter;
     border-radius: 20px;
     border:none ;
+    margin: 20px;
+}
+
+.firstlist{
+    position: absolute;
+    width: 360px;
+    height: 535px;
+    top: 500px;
+    left: -17px;
+}
+.seclist{
+    position: absolute;
+    width: 340px;
+    height: 395px;
+    top: 579px;
+    right: 0px;
 }
