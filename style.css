@@ -100,39 +100,36 @@ button{
     right: 0px;
 }
 
-.ellipse{
-
-position: absolute;
-left: 400px;
-bottom:0px;
-
-
+.bulka {
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%); 
+    display: flex;
+    align-items: flex-end; 
 }
 
-.ellipse2{
-/* Group 5 */
-
-position: absolute;
-left: 650px;
-bottom:0px;
-
-
+.ellipse {
+    position: absolute;
+    z-index: 1;
+    left: -350px;
+    bottom: 0;
 }
 
-.pencil{
-position: absolute;
-width: 242px;
-height: 248px;
-left: 550px;
-bottom: 30px;
-
-
-background: url(image.png);
+.pencil {
+    position: absolute;
+    z-index: 2;
+    left: -130px; 
+    bottom: 30px; 
 }
 
-.bulka{
-    top: 620px;
+.ellipse2 {
+    position: absolute;
+    z-index: 3;
+    left: -50px;
+    bottom: 0;
 }
+
 
 .download{
     animation-duration: 3s;
