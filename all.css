@@ -10,6 +10,40 @@ body {
 
 /* Модальне вікно - вирівнювання по центру */
 
+.grid .day {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.top-left-container {
+    position: absolute;
+    top: 10px;
+    width: 150px;
+    left: 10px;
+    background-color: #f9f9f9;
+    padding: 10px 10px 10px 10px ;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.top-left-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.top-left-container input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
 /* Контент модального вікна */
 .modal-content { margin: 0; /* Вирівнювання по центру */
     text-align: center; /* Текст по центру */}

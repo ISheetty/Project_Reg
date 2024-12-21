@@ -31,6 +31,7 @@ function updateDateButton(day, month, year) {
     const formattedDate = `${day}.${month < 10 ? '0' + month : month}.${year}`;
     dateButton.innerHTML = formattedDate;
     loadListsForDate(formattedDate);
+    updateDayColor(formattedDate); // Обновляем цвет выбранного дня
 }
 
 // Генерация календаря
@@ -55,6 +56,7 @@ function generateCalendar(year, month) {
         dayCell.classList.add('grid-item');
         dayCell.textContent = day;
 
+        // Событие для выбора дня
         dayCell.addEventListener('click', function () {
             updateDateButton(day, month + 1, year);
         });
@@ -111,6 +113,52 @@ monthSelector.addEventListener('change', () => {
 // Инициализация календаря
 updateDateButton(day, month, year);
 generateCalendar(year, month - 1);
+
+// Функция для изменения цвета дня
+function updateDayColor(date) {
+    const selectedStatus = document.getElementById("statusSelector").value;
+    const days = document.querySelectorAll(".calendar-container .grid .grid-item");
+
+    days.forEach(dayCell => {
+        // Очистка цвета перед изменением
+        dayCell.style.backgroundColor = '';
+        if (dayCell.textContent.trim() === date.split('.')[0]) {
+            // Изменение цвета для выбранного дня
+            if (selectedStatus === "hard") {
+                dayCell.style.backgroundColor = "red";  // Красный для сложного дня
+            } else if (selectedStatus === "medium") {
+                dayCell.style.backgroundColor = "yellow";  // Желтый для среднего дня
+            } else if (selectedStatus === "easy") {
+                dayCell.style.backgroundColor = "green";  // Зеленый для легкого дня
+            }
+        }
+    });
+}
+
+// Обработчик изменения статуса дня
+document.getElementById("statusSelector").addEventListener("change", () => {
+    updateDayColor(dateButton.innerHTML); // Обновляем цвет дня при изменении статуса
+});
+
+// Зберігання статусу в localStorage (при оновленні)
+function saveToLocalStorage() {
+    localStorage.setItem('dayStatuses', JSON.stringify(dayStatuses));
+}
+
+// Завантаження статусів при завантаженні сторінки
+function loadFromLocalStorage() {
+    const savedStatuses = JSON.parse(localStorage.getItem('dayStatuses'));
+    if (savedStatuses) {
+        dayStatuses = savedStatuses;
+    }
+    changeDayColor();
+}
+
+// Завантаження статусів при завантаженні сторінки
+window.onload = function() {
+    loadFromLocalStorage();
+};
+
 
 // Работа с вкладками
 let tabButtons = document.querySelectorAll('.tab-button');
@@ -394,6 +442,7 @@ function loadListsForDate(date) {
         });
     }
 }
+// колір дня
 
 // Создание элемента списка (обновлено)
 function createListItem(fileName) {
