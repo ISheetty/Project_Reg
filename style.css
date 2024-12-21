@@ -59,7 +59,7 @@ h1{
     font-size: 48px;
     text-align: center;
     margin-bottom: 50px;
-    margin-top: 122px;
+    margin-top: 100px;
 
 }
 main{
@@ -111,26 +111,33 @@ button{
 
 .ellipse {
     position: absolute;
-    z-index: 1;
-    left: -350px;
+    z-index: 3;
+    left: -20px;
     bottom: 0;
 }
 
 .pencil {
     position: absolute;
     z-index: 2;
-    left: -130px;
+    left: -120px;
     bottom: 30px; 
 }
 
 .ellipse2 {
     position: absolute;
-    z-index: 3;
-    left: -50px;
+    z-index: 1;
+    left: -270px;
     bottom: 0;
 }
 .Regg{
-    background-color: #4CAF50;
+    background-color:yellow;
+    font-size: 28;
+ 
+}
+.Regg:hover{
+    box-shadow: -10px 5px 50px #000;
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .download{
@@ -174,10 +181,10 @@ button{
 }
 
 .dropbtn {
-    background-color: #4CAF50;
-    color: white;
+    background-color: yellow;
+    color: black;
     padding: 16px;
-    font-size: 16px;
+    font-size: 26px;
     border: none;
 }
 
@@ -216,5 +223,5 @@ button{
 
 a{
     text-decoration: none;
-    color: white;
+    color: black;
 }
